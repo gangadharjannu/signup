@@ -1,0 +1,26 @@
+:host {
+  --primary-blue: #4d148c;
+  --white: #fff;
+  --toolbar-height: 60px;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--toolbar-height);
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-weight: 600;
+
+  .title {
+    margin: auto;
+  }
+}
+
+.content {
+  margin-top: var(--toolbar-height);
+}

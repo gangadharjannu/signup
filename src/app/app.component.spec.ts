@@ -19,13 +19,13 @@ describe('AppComponent', () => {
   it(`should have as title 'signup'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('signup');
+    expect(app.title).toEqual('Please register here to create account');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('signup app is running!');
+    expect(compiled.querySelector('.toolbar .title').textContent).toContain('Please register here to create account');
   });
 });
