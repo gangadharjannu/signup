@@ -10,9 +10,16 @@ export function ForbiddenPassword(controlName: string, firstName: string, lastNa
 
     // set error on matchingControl if validation fails
     if (controlValue.includes(firstNameControl.value) || controlValue.includes(lastNameControl.value)) {
-      control.setErrors({ forbiddenPassword: true });
+      // Fix for accidentally overriding all remaining errors
+      // https://stackoverflow.com/questions/45069629/angular-abstract-control-remove-error
+      control.setErrors({ ...control.errors, forbiddenPassword: true });
     } else {
-      control.setErrors(null);
+      if (Object.keys(control.errors || {}).length === 0) {
+        control.setErrors(null);
+      } else {
+        delete control.errors.forbiddenPassword;
+        control.setErrors({ ...control.errors });
+      }
     }
   };
 }
