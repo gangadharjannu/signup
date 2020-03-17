@@ -5,6 +5,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This project contains a simple registration form that is used by users to register their details.
 This project built with Angular and Angular Material.
 
+## Live version
+
+A live version of this project is available at [Signup](https://gangadharjannu.github.io/signup).
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
