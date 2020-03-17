@@ -8,4 +8,22 @@ export class AppPage {
   getTitleText(): Promise<string> {
     return element(by.css('app-root .toolbar .title')).getText() as Promise<string>;
   }
+
+  setFormValues(): void {
+    const mockSignupFormFields = {
+      firstName: 'fn',
+      lastName: 'ln',
+      email: 'em@i.l',
+      password: 'passwordmin8char'
+    };
+    Object.keys(mockSignupFormFields).forEach(prop => {
+      const formElement = element(by.id(prop));
+      formElement.sendKeys(mockSignupFormFields[prop]);
+    });
+    element(by.id('submit')).click();
+  }
+
+  getNotificationMessage(): Promise<string> {
+    return element(by.css('simple-snack-bar span')).getText() as Promise<string>;
+  }
 }
