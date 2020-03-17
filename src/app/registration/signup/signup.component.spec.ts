@@ -76,38 +76,38 @@ describe('SignupComponent', () => {
 
   Object.keys(mockSignupFormFields).forEach(formControlKey => {
     it(`${formControlKey} field validity`, () => {
-      let formControl = component.signupForm.controls[formControlKey];
+      const formControl = component.signupForm.controls[formControlKey];
       expect(formControl.valid).toBeFalsy();
     });
   });
 
   Object.keys(mockSignupFormFields).forEach(formControlKey => {
     it(`${formControlKey} field validity required`, () => {
-      let formControl = component.signupForm.controls[formControlKey];
+      const formControl = component.signupForm.controls[formControlKey];
       const { errors } = formControl || {};
-      expect(errors['required']).toBeTruthy();
+      expect(errors.required).toBeTruthy();
     });
   });
 
   it('form fields validity', () => {
     Object.keys(mockSignupFormFields).forEach(formControlKey => {
-      let formControl = component.signupForm.controls[formControlKey];
+      const formControl = component.signupForm.controls[formControlKey];
       formControl.setValue(mockSignupFormFields[formControlKey]);
       expect(formControl.valid).toBeTruthy();
     });
   });
 
   it('email should be valid', () => {
-    const emailFormControl = component.signupForm.controls['email'];
+    const emailFormControl = component.signupForm.controls.email;
     emailFormControl.setValue('asdf');
     expect(emailFormControl.valid).toBeFalsy();
     expect(emailFormControl.errors.email).toBeTruthy();
   });
 
   it('password should not contain firstname or lastname', () => {
-    component.signupForm.controls['firstName'].setValue('first');
-    component.signupForm.controls['lastName'].setValue('last');
-    const passwordFormControl = component.signupForm.controls['password'];
+    component.signupForm.controls.firstName.setValue('first');
+    component.signupForm.controls.lastName.setValue('last');
+    const passwordFormControl = component.signupForm.controls.password;
     passwordFormControl.setValue('first');
     expect(passwordFormControl.valid).toBeFalsy();
     expect(passwordFormControl.errors.forbiddenPassword).toBeTruthy();
@@ -129,7 +129,7 @@ describe('SignupComponent', () => {
 
   it('should submit form', () => {
     Object.keys(mockSignupFormFields).forEach(formControlKey => {
-      let formControl = component.signupForm.controls[formControlKey];
+      const formControl = component.signupForm.controls[formControlKey];
       formControl.setValue(mockSignupFormFields[formControlKey]);
       expect(formControl.valid).toBeTruthy();
     });

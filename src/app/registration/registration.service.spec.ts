@@ -15,7 +15,7 @@ describe('RegistrationService', () => {
       imports: [HttpClientTestingModule]
     });
     registrationService = TestBed.inject(RegistrationService);
-    httpMock = TestBed.get(HttpTestingController);
+    httpMock = TestBed.inject(HttpTestingController);
 
   });
 
