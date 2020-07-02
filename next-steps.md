@@ -7,3 +7,4 @@
 - [ ] Setup husky and lint-staged to prevent unsafe code push to the repository.
 - [ ] CI/CD
 - [x] Live version.
+- [x] Above 85% code coverage.
