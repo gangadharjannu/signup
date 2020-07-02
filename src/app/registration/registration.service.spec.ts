@@ -1,10 +1,11 @@
-import { User } from './../models/user';
+
 import { TestBed } from '@angular/core/testing';
+import { HttpErrorResponse } from '@angular/common/http';
 // Http testing module and mocking controller
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { RegistrationService } from './registration.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { User } from './../models/user';
 
 describe('RegistrationService', () => {
   let registrationService: RegistrationService;
