@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "code-coverage": "ng test --no-watch --code-coverage --watch=false"
+    "code-coverage": "ng test --no-watch --code-coverage --watch=false",
+    "deploy": "ng build --prod --base-href=/signup/"
   },
   "private": true,
   "dependencies": {
