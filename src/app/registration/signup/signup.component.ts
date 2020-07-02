@@ -46,8 +46,7 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.invalid) {
       return;
     }
-    const payload: User = { ...this.signupForm.value };
-    delete payload.password;
+    const { payload, password:_ } = this.signupForm.value;
 
     // register the user
     this.registerService.register(payload).pipe(first())
@@ -68,7 +67,10 @@ export class SignupComponent implements OnInit {
         });
   }
 
-  // helper methods to get error messages for form fields
+  /**
+   * helper methods to get error messages for form fields
+  */
+
   getFirstNameErrorMessage() {
     if (this.f.firstName.hasError('required')) {
       return signupFormConstants.REQUIRED_VALIDATION_MSG;
